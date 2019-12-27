@@ -1,31 +1,18 @@
-let BBPipelineConfig = ./pipelineFileTyping.dhall
+let BB = ./BB.dhall
 
-let Clone = ./clone.dhall
-
-let Definitions = ./definitions.dhall
-
-let Options = ./options.dhall
-
-let Pipeline = ./pipeline.dhall
-
-let PipelineMap = ./pipelineMap.dhall
-
-let PStep = ./pipelineStep.dhall
-
-let Step = ./step.dhall
-
-let defaultPipeline = [ PStep.Sequential (Step.mkStep "hello world" ["echo hello"]) ] : Pipeline
+let defaultPipeline 
+  = [ BB.PipelineStep.Sequential (BB.Step.mkStep "hello world" ["echo hello"]) ] : BB.Pipeline
 
 in  { image = "node 10.15.3"
-    , clone = None Clone
-    , definitions = None Definitions
-    , options = None Options
+    , clone = None BB.Clone
+    , definitions = None BB.Definitions
+    , options = None BB.Options
     , pipelines 
       = { default = Some defaultPipeline
-        , branches = None PipelineMap
-        , tags = None PipelineMap
-        , bookmarks = None PipelineMap
-        , pullRequests = None Pipeline
-        , custom = None PipelineMap
+        , branches = None BB.PipelineMap
+        , tags = None BB.PipelineMap
+        , bookmarks = None BB.PipelineMap
+        , pullRequests = None BB.Pipeline
+        , custom = None BB.PipelineMap
         }
-    } : BBPipelineConfig
+    } : BB.BBPipelineFileType
