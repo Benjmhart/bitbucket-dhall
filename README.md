@@ -32,6 +32,18 @@ let defaultPipeline
   = [ BB.PipelineStep.Sequential (BB.Step.mkStep "hello world" ["echo hello", "echo world"]) ] : BB.Pipeline
 ```
 
+To build your config in a unix-compatible environment, be sure that you have `dhall-to-yaml installed` run the following script:
+
+```bash
+cat my-pipeline-config.dhall | dhall-to-yaml > bitbucket-pipelines.yml
+```
+
+## Known Issues
+
+- Currently the "pull requests" property in the type is mislabled as "pullRequests"
+
+- Bitbucket expects unquoted YAML strings - so we need to find the correct way to translate yaml strings as unquoted - this is likely a setting we can provide to dhall-to-yaml
+
 ## Contributing
 
 PR's are very much welcome - especially to smoothe over the user interface or to improve type safety
