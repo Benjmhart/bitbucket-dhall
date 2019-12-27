@@ -16,7 +16,6 @@ let Step = ./step.dhall
 
 let defaultPipeline = [ PStep.Sequential (Step.mkStep "hello world" ["echo hello"]) ] : Pipeline
 
-
 in  { image = "node 10.15.3"
     , clone = None Clone
     , definitions = None Definitions
