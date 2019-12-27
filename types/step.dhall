@@ -17,7 +17,7 @@ let default : StepType
   = { variables = None (List { name: Text })
     , step = 
       Some { name = None Text
-           , caches : [] : List Text
+           , caches = [] : List Text
            , artifact = None Text
            , size = None Natural
            , deployment = None Text
