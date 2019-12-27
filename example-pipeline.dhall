@@ -1,4 +1,4 @@
-let BB = https://raw.githubusercontent.com/Benjmhart/bitbucket-dhall/master/BB.dhall
+let BB = ./BB.dhall
 
 let defaultPipeline 
   = [ BB.PipelineStep.Sequential (BB.Step.mkStep "hello world" ["echo hello"]) ] : BB.Pipeline
