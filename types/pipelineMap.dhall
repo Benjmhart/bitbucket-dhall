@@ -1,3 +1,6 @@
 let Pipeline = ./pipeline.dhall
-in List { key: Text, value: Pipeline }
 
+let PipelineMapType : Type
+  = List { mapKey: Text, mapValue: Pipeline }
+
+in PipelineMapType

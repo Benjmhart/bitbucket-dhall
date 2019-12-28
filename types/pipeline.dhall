@@ -1,3 +1,8 @@
 let PipelineStep = ./pipelineStep.dhall
+
+let Pipeline : Type
+  = List (PipelineStep) 
+
+
 in
-List PipelineStep
+Pipeline

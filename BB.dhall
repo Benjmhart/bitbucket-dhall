@@ -6,6 +6,7 @@ let BBPipelineFileType = ./types/pipelineFileTyping.dhall
 let PipelineMap = ./types/pipelineMap.dhall
 let PipelineStep = ./types/pipelineStep.dhall
 let Step = ./types/step.dhall
+let utils = ./utils.dhall
 
 in
 
@@ -17,4 +18,5 @@ in
 , Definitions = Definitions
 , Pipeline = Pipeline
 , PipelineMap = PipelineMap
+, utils = utils
 }

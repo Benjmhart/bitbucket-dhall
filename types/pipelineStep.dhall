@@ -1,3 +1,8 @@
 let Step = ./step.dhall
+
+let PipelineStepType
+  = < Parallel : List Step | Sequential : Step >
+
 in
- < Parallel : List Step.type | Sequential : Step.type >
+PipelineStepType
+

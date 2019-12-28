@@ -1,9 +1,19 @@
- {-- let BB = https://raw.githubusercontent.com/Benjmhart/bitbucket-dhall/master/BB.dhall --}
 
 let BB = ./BB.dhall
 
 let defaultPipeline 
-  = [ BB.PipelineStep.Sequential (BB.Step.mkStep "hello world" ["echo hello"]) ] : BB.Pipeline
+  = [ BB.utils.mkSequential "hello world" ["echo hello"] ] : BB.Pipeline
+
+let masterPipeline 
+  = [ BB.utils.mkSequential 
+      "master" 
+      [ "echo 'I run when you push to master'" 
+      , "echo 'I test your code or deploy'"
+      ] 
+    ]
+
+let branchPipeline 
+  = [ BB.utils.mkPipelineMapItem "master" masterPipeline ]
 
 in  { image = "node:10.15.3"
     , clone = None BB.Clone
