@@ -13,7 +13,7 @@ let masterPipeline
     ]
 
 let branchPipeline 
-  = [ BB.utils.mkPipelineMapItem "master" masterPipeline ]
+  = [ BB.utils.mkPipelineMapItem "master" masterPipeline ] : BB.PipelineMap
 
 in  { image = "node:10.15.3"
     , clone = None BB.Clone
@@ -21,7 +21,7 @@ in  { image = "node:10.15.3"
     , options = None BB.Options
     , pipelines 
       = { default = Some defaultPipeline
-        , branches = None branchPipeline
+        , branches = Some branchPipeline
         , tags = None BB.PipelineMap
         , bookmarks = None BB.PipelineMap
         , `pull requests` = None BB.Pipeline
