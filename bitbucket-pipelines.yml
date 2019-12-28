@@ -1,7 +1,0 @@
-image: "node:10.15.3"
-pipelines:
-  default:
-  - step:
-      name: hello world
-      script:
-      - echo hello

@@ -21,7 +21,7 @@ in  { image = "node:10.15.3"
     , options = None BB.Options
     , pipelines 
       = { default = Some defaultPipeline
-        , branches = None BB.PipelineMap
+        , branches = None branchPipeline
         , tags = None BB.PipelineMap
         , bookmarks = None BB.PipelineMap
         , `pull requests` = None BB.Pipeline
