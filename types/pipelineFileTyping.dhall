@@ -20,7 +20,7 @@ in
     Optional PipelineMap
   , tags: Optional PipelineMap
   , bookmarks: Optional PipelineMap
-  , pullRequests: Optional Pipeline
+  , `pull requests`: Optional Pipeline
   , custom: Optional PipelineMap
   }
 }

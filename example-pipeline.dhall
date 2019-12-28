@@ -1,4 +1,6 @@
-let BB = https://raw.githubusercontent.com/Benjmhart/bitbucket-dhall/master/BB.dhall
+ {-- let BB = https://raw.githubusercontent.com/Benjmhart/bitbucket-dhall/master/BB.dhall --}
+
+let BB = ./BB.dhall
 
 let defaultPipeline 
   = [ BB.PipelineStep.Sequential (BB.Step.mkStep "hello world" ["echo hello"]) ] : BB.Pipeline
@@ -12,7 +14,7 @@ in  { image = "node 10.15.3"
         , branches = None BB.PipelineMap
         , tags = None BB.PipelineMap
         , bookmarks = None BB.PipelineMap
-        , pullRequests = None BB.Pipeline
+        , `pull requests` = None BB.Pipeline
         , custom = None BB.PipelineMap
         }
     } : BB.BBPipelineFileType

@@ -1,1 +1,1 @@
-cat ./example-pipeline.dhall | dhall-to-yaml --explain > bitbucket-pipelines.yml
+cat ./example-pipeline.dhall | dhall-to-yaml-ng --explain > bitbucket-pipelines.yml

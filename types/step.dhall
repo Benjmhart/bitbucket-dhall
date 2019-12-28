@@ -2,7 +2,7 @@ let StepType : Type
   = { variables: Optional (List { name: Text })
     , step : Optional 
       { name : Optional Text
-      , caches : List Text
+      , caches : Optional (List Text)
       , artifact : Optional Text
       , size : Optional Natural
       , deployment : Optional Text
@@ -12,26 +12,11 @@ let StepType : Type
       }
     }
 
-
-let default : StepType
-  = { variables = None (List { name: Text })
-    , step = 
-      Some { name = None Text
-           , caches = [] : List Text
-           , artifact = None Text
-           , size = None Natural
-           , deployment = None Text
-           , image = None Text
-           , script = [] : List Text
-           , after-script = None (List Text)
-           } 
-    } : StepType
-
 let mkStep = \(name: Text) 
              -> \(scriptList: List Text) 
                 -> { variables = None (List { name: Text })
                    , step = Some { name = Some name
-                                 , caches = [] : List Text
+                                 , caches = None (List Text)
                                  , artifact = None Text
                                  , size = None Natural
                                  , deployment = None Text
@@ -44,6 +29,5 @@ let mkStep = \(name: Text)
 in
 
 { type = StepType
-, default = default
 , mkStep = mkStep
 }
