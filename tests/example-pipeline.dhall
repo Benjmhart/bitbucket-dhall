@@ -1,5 +1,5 @@
 
-let BB = https://raw.githubusercontent.com/Benjmhart/bitbucket-dhall/master/BB.dhall
+let BB = ./BB.dhall
 
 let defaultPipeline 
   = [ BB.utils.mkSequential "hello world" ["echo hello"] ] : BB.Pipeline

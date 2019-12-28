@@ -1,0 +1,14 @@
+image: "node:10.15.3"
+pipelines:
+  branches:
+    master:
+    - step:
+        name: master
+        script:
+        - "echo 'I run when you push to master'"
+        - "echo 'I test your code or deploy'"
+  default:
+  - step:
+      name: hello world
+      script:
+      - echo hello
