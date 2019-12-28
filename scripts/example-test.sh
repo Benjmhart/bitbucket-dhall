@@ -1,4 +1,4 @@
-sh ./build.sh
+sh ./scripts/build.sh
 git add .
 git commit -m "test"
 git push test master
