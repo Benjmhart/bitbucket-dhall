@@ -1,1 +1,1 @@
-{ depth: Text, lfs: Bool }
+{ depth : Text, lfs : Bool }

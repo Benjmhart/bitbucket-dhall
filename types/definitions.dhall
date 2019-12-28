@@ -1,1 +1,1 @@
-{ services: Text, caches: Text }
+{ services : Text, caches : Text }

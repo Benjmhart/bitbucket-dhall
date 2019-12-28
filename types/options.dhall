@@ -1,1 +1,1 @@
-{ max-time: Natural, size : Natural }
+{ max-time : Natural, size : Natural }
